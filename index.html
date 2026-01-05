@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My First Website</title>
+  <title>Interactive Greeting</title>
+  <style>
+    body {
+      background: #f0f8ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    #greetBox {
+      background-color: #1a73e8;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 10px;
+      width: 80%;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 10px;
+      background-color: #0b59d1;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #083d9b;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello Stanly</h1>
-  <p>This is my first website.</p>
+
+<div id="greetBox">
+  <h2>Welcome to My Website!</h2>
+  <p>Enter your name below:</p>
+  <input type="text" id="nameInput" placeholder="Your Name">
+  <br>
+  <button onclick="greet()">Greet Me!</button>
+  <p id="message" style="margin-top:20px; font-size:18px;"></p>
+</div>
+
+<script>
+function greet() {
+  var name = document.getElementById('nameInput').value;
+  if(name.trim() === "") {
+    document.getElementById('message').innerHTML = "Please enter your name!";
+  } else {
+    document.getElementById('message').innerHTML = "Hello " + name + "! Welcome to my website!";
+  }
+}
+</script>
+
 </body>
 </html>
